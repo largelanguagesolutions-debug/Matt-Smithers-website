@@ -250,43 +250,39 @@
         .aurora::after {
             content: '';
             position: absolute;
-            width: 250%;
-            height: 250%;
-            top: -75%;
-            left: -120%;
+            width: 180%;
+            height: 180%;
+            top: -40%;
+            left: -100%;
             transform: rotate(45deg);
-            filter: blur(100px);
             background:
-                radial-gradient(ellipse 25% 18% at 25% 35%, rgba(46, 139, 255, 0.25) 0%, transparent 70%),
-                radial-gradient(ellipse 22% 15% at 45% 55%, rgba(93, 168, 255, 0.18) 0%, transparent 70%),
-                radial-gradient(ellipse 28% 16% at 35% 75%, rgba(26, 82, 153, 0.22) 0%, transparent 70%),
-                radial-gradient(ellipse 20% 14% at 60% 40%, rgba(46, 139, 255, 0.16) 0%, transparent 70%);
+                radial-gradient(ellipse 30% 20% at 25% 35%, rgba(46, 139, 255, 0.3) 0%, transparent 65%),
+                radial-gradient(ellipse 25% 18% at 50% 60%, rgba(93, 168, 255, 0.22) 0%, transparent 65%),
+                radial-gradient(ellipse 28% 22% at 40% 80%, rgba(26, 82, 153, 0.26) 0%, transparent 65%);
             animation: auroraSweep1 18s linear infinite;
         }
         .aurora::after {
-            filter: blur(120px);
             background:
-                radial-gradient(ellipse 24% 16% at 30% 45%, rgba(46, 139, 255, 0.22) 0%, transparent 70%),
-                radial-gradient(ellipse 20% 18% at 55% 30%, rgba(93, 168, 255, 0.15) 0%, transparent 70%),
-                radial-gradient(ellipse 26% 14% at 50% 65%, rgba(26, 82, 153, 0.2) 0%, transparent 70%),
-                radial-gradient(ellipse 22% 17% at 70% 50%, rgba(93, 168, 255, 0.14) 0%, transparent 70%);
+                radial-gradient(ellipse 28% 20% at 35% 40%, rgba(46, 139, 255, 0.26) 0%, transparent 65%),
+                radial-gradient(ellipse 24% 22% at 60% 30%, rgba(93, 168, 255, 0.18) 0%, transparent 65%),
+                radial-gradient(ellipse 30% 18% at 50% 70%, rgba(26, 82, 153, 0.22) 0%, transparent 65%);
             animation: auroraSweep2 24s linear infinite;
             animation-delay: -10s;
         }
 
         @keyframes auroraSweep1 {
-            0%   { left: -120%; top: -75%; }
-            25%  { top: -65%; }
-            50%  { top: -80%; }
-            75%  { top: -68%; }
-            100% { left: 100%; top: -75%; }
+            0%   { left: -100%; top: -40%; }
+            25%  { top: -30%; }
+            50%  { top: -45%; }
+            75%  { top: -32%; }
+            100% { left: 80%; top: -40%; }
         }
         @keyframes auroraSweep2 {
-            0%   { left: -120%; top: -70%; }
-            25%  { top: -82%; }
-            50%  { top: -65%; }
-            75%  { top: -78%; }
-            100% { left: 100%; top: -70%; }
+            0%   { left: -100%; top: -35%; }
+            25%  { top: -48%; }
+            50%  { top: -30%; }
+            75%  { top: -42%; }
+            100% { left: 80%; top: -35%; }
         }
 
         /* Hero headshot - top left */
