@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Smithers | Aerospace Professional & Entrepreneur</title>
+    <meta name="description" content="30 years of aerospace expertise. Navy veteran, flight engineer, program manager. Now building the future of aviation technology.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #08090E;
+            --bg-secondary: #0D0F17;
+            --bg-tertiary: #111421;
+            --bg-card: #141724;
+            --text-primary: #E8EAF0;
+            --text-secondary: #8B8FA3;
+            --text-muted: #4A4E63;
+            --accent: #2E8BFF;
+            --accent-glow: rgba(46, 139, 255, 0.15);
+            --accent-bright: #5DA8FF;
+            --accent-dim: #1A5299;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(46, 139, 255, 0.3);
+            --font-display: 'Outfit', sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-display);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            opacity: 0;
+            animation: bodyFadeIn 0.8s ease-out 0.2s forwards;
+        }
+
+        @keyframes bodyFadeIn {
+            to { opacity: 1; }
+        }
+
+        /* ============================================
+           SCROLL ANIMATIONS
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        .reveal-fade {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .reveal-fade.visible { opacity: 1; }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ============================================
+           HEADER
+           ============================================ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 clamp(1.5rem, 4vw, 3rem);
+            background: rgba(8, 9, 14, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        nav a {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        nav a:hover { color: var(--accent); }
+        nav a:hover::after { width: 100%; }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        /* ============================================
+           MOBILE NAV
+           ============================================ */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            inset: 0;
+            top: 64px;
+            background: var(--bg-primary);
+            z-index: 99;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+        .mobile-nav.open { display: flex; }
+        .mobile-nav a {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            transition: color 0.3s ease;
+        }
+        .mobile-nav a:hover { color: var(--accent); }
+
+        /* ============================================
+           HERO
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 4vw, 3rem) clamp(3rem, 6vh, 5rem);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 70vw;
+            height: 70vw;
+            max-width: 900px;
+            max-height: 900px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+            animation: heroGlow 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroGlow {
+            0% { opacity: 0.4; transform: translate(0, 0) scale(1); }
+            100% { opacity: 0.7; transform: translate(-5%, 5%) scale(1.1); }
+        }
+
+        .hero-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            width: 32px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 7vw, 6.5rem);
+            font-weight: 800;
+            line-height: 1.0;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            max-width: 1000px;
+            margin-bottom: 2rem;
+        }
+        .hero h1 .accent { color: var(--accent); }
+
+        .hero-sub {
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            color: var(--text-secondary);
+            max-width: 550px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            margin-top: 2.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--bg-primary);
+            background: var(--accent);
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: var(--accent-bright);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(46, 139, 255, 0.3);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            background: transparent;
+            padding: 0.9rem 2rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* ============================================
+           SECTION STYLES
+           ============================================ */
+        section {
+            padding: clamp(4rem, 8vh, 8rem) clamp(1.5rem, 4vw, 3rem);
+        }
+
+        .section-border-top {
+            border-top: 1px solid var(--border);
+        }
+
+        .eyebrow {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .section-heading {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4.5vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            line-height: 1.05;
+            margin-bottom: 2rem;
+        }
+
+        .section-body {
+            font-size: clamp(1rem, 1.3vw, 1.15rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        .about {
+            background: var(--bg-secondary);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(3rem, 6vw, 6rem);
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .about-image-container {
+            position: relative;
+            aspect-ratio: 3/4;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+        }
+        .about-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        /* ============================================
+           EXPERTISE / CREDENTIALS
+           ============================================ */
+        .expertise {
+            background: var(--bg-primary);
+        }
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 1300px;
+            margin: 3rem auto 0;
+        }
+        .credential-card {
+            background: var(--bg-secondary);
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: background 0.4s ease;
+        }
+        .credential-card:hover {
+            background: var(--bg-tertiary);
+        }
+        .credential-number {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: -0.03em;
+            line-height: 1;
+        }
+        .credential-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .credential-detail {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        /* ============================================
+           WHAT I'M BUILDING
+           ============================================ */
+        .building {
+            background: var(--bg-secondary);
+        }
+        .ventures-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1.5rem, 3vw, 2rem);
+            max-width: 1300px;
+            margin: 3rem auto 0;
+        }
+        .venture-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: clamp(2rem, 4vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .venture-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .venture-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+        }
+        .venture-card:hover::before { opacity: 1; }
+
+        .venture-status {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            padding: 0.3rem 0.7rem;
+            border: 1px solid var(--accent-dim);
+            border-radius: 3px;
+            display: inline-block;
+            width: fit-content;
+        }
+        .venture-name {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .venture-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        .venture-tag {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-top: auto;
+        }
+
+        /* ============================================
+           CONTACT
+           ============================================ */
+        .contact {
+            background: var(--bg-primary);
+            text-align: center;
+        }
+        .contact .section-body {
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            padding: 2rem clamp(1.5rem, 4vw, 3rem);
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        footer p {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* ============================================
+           HORIZONTAL RULE ACCENT
+           ============================================ */
+        .accent-line {
+            width: 60px;
+            height: 2px;
+            background: var(--accent);
+            margin: 2rem 0;
+        }
+
+        /* ============================================
+           BACKGROUND GRID PATTERN
+           ============================================ */
+        .grid-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.03;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+
+        section, header, footer { position: relative; z-index: 1; }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 900px) {
+            nav { display: none; }
+            .hamburger { display: flex; }
+            .about-grid { grid-template-columns: 1fr; }
+            .about-image-container { max-height: 400px; }
+            .ventures-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.4rem; }
+            .credentials-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================
+           NOISE TEXTURE OVERLAY
+           ============================================ */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.015;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 128px 128px;
+        }
+
+        /* ============================================
+           SELECTION STYLING
+           ============================================ */
+        ::selection {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+    </style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+
+<!-- ============================================
+     HEADER
+     ============================================ -->
+<header>
+    <a href="#" class="logo">MATT<span>.</span>SMITHERS</a>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#building">Building</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="hamburger" onclick="document.querySelector('.mobile-nav').classList.toggle('open')">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+<div class="mobile-nav">
+    <a href="#about" onclick="document.querySelector('.mobile-nav').classList.remove('open')">About</a>
+    <a href="#expertise" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Expertise</a>
+    <a href="#building" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Building</a>
+    <a href="#contact" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Contact</a>
+</div>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="hero">
+    <div class="hero-eyebrow reveal">Aerospace &bull; Defense &bull; Aviation Technology</div>
+    <h1 class="reveal reveal-delay-1">
+        30 Years of Aerospace.<br>
+        <span class="accent">Now Building What's Next.</span>
+    </h1>
+    <p class="hero-sub reveal reveal-delay-2">
+        Navy combat veteran, flight engineer, and aerospace program manager
+        turning three decades of operational expertise into technology ventures
+        that modernize general aviation.
+    </p>
+    <div class="hero-cta reveal reveal-delay-3">
+        <a href="#building" class="btn-primary">What I'm Building &darr;</a>
+        <a href="#contact" class="btn-secondary">Get In Touch</a>
+    </div>
+</section>
+
+<!-- ============================================
+     ABOUT
+     ============================================ -->
+<section id="about" class="about section-border-top">
+    <div class="about-grid">
+        <div class="about-image-container reveal-left">
+            <img src="headshot.jpeg" alt="Matt Smithers - Aerospace Professional">
+        </div>
+        <div>
+            <div class="eyebrow reveal">About</div>
+            <h2 class="section-heading reveal reveal-delay-1">The short version.</h2>
+            <div class="accent-line reveal reveal-delay-2"></div>
+            <p class="section-body reveal reveal-delay-2">
+                I spent 22 years as a Navy Flight Engineer on P-3 Orion and C-130 Hercules aircraft,
+                logging over 6,000 combat and operational flight hours. After the Navy, I moved into
+                aerospace program management, supporting some of the most advanced defense platforms
+                in the world at Northrop Grumman.
+            </p>
+            <br>
+            <p class="section-body reveal reveal-delay-3">
+                Now I'm channeling all of that into building technology that brings
+                general aviation into the modern era. I've been starting things for 30 years.
+                In 2026, I finally started <em>finishing</em> them.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     EXPERTISE
+     ============================================ -->
+<section id="expertise" class="expertise section-border-top">
+    <div style="max-width: 1300px; margin: 0 auto;">
+        <div class="eyebrow reveal">Expertise</div>
+        <h2 class="section-heading reveal reveal-delay-1">Built on experience.<br>Backed by credentials.</h2>
+    </div>
+    <div class="credentials-grid">
+        <div class="credential-card reveal">
+            <div class="credential-number">30+</div>
+            <div class="credential-label">Years in Aerospace &amp; Defense</div>
+            <div class="credential-detail">
+                From the flight deck to the program office. Navy operations, depot-level maintenance,
+                and defense acquisition across multiple major weapons systems.
+            </div>
+        </div>
+        <div class="credential-card reveal reveal-delay-1">
+            <div class="credential-number">6,000+</div>
+            <div class="credential-label">Flight Hours</div>
+            <div class="credential-detail">
+                P-3C Orion and C-130 Hercules. Combat deployments, operational missions,
+                and the kind of systems knowledge you can only get from seat time.
+            </div>
+        </div>
+        <div class="credential-card reveal reveal-delay-2">
+            <div class="credential-number">22</div>
+            <div class="credential-label">Years U.S. Navy</div>
+            <div class="credential-detail">
+                Flight Engineer. Combat veteran. Deep expertise in multi-engine turboprop
+                aircraft systems, maintenance operations, and crew resource management.
+            </div>
+        </div>
+        <div class="credential-card reveal reveal-delay-3">
+            <div class="credential-number">TS/SAP</div>
+            <div class="credential-label">Active Security Clearance</div>
+            <div class="credential-detail">
+                Top Secret with Special Access Programs. Currently supporting critical
+                defense programs at Northrop Grumman.
+            </div>
+        </div>
+        <div class="credential-card reveal reveal-delay-4">
+            <div class="credential-number">A&P</div>
+            <div class="credential-label">FAA Certificated Mechanic</div>
+            <div class="credential-detail">
+                Airframe & Powerplant certificate holder. Hands-on knowledge of aircraft
+                maintenance from the wrench-turning level up.
+            </div>
+        </div>
+        <div class="credential-card reveal reveal-delay-5">
+            <div class="credential-number">BSAS</div>
+            <div class="credential-label">Embry-Riddle Aeronautical University</div>
+            <div class="credential-detail">
+                Bachelor of Science in Aeronautical Science from the world's premier
+                aviation and aerospace university.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     WHAT I'M BUILDING
+     ============================================ -->
+<section id="building" class="building section-border-top">
+    <div style="max-width: 1300px; margin: 0 auto;">
+        <div class="eyebrow reveal">What I'm Building</div>
+        <h2 class="section-heading reveal reveal-delay-1">Turning domain expertise<br>into technology.</h2>
+        <p class="section-body reveal reveal-delay-2" style="margin-bottom: 0;">
+            After 30 years of starting but never finishing, I broke the pattern.
+            Two live iOS apps shipped in early 2026. Now building what's next.
+        </p>
+    </div>
+    <div class="ventures-grid">
+        <div class="venture-card reveal">
+            <div class="venture-status">Active Development</div>
+            <div class="venture-name">IntelliSquawk</div>
+            <div class="venture-desc">
+                Aviation maintenance SaaS targeting Part 145 repair stations and independent
+                A&P mechanics. AI-powered predictive maintenance for the general aviation shops
+                that the big players ignore. Starting with a lightweight mobile app as the
+                Trojan horse into a larger enterprise platform.
+            </div>
+            <div class="venture-tag">SaaS &bull; Aviation &bull; AI/ML</div>
+        </div>
+        <div class="venture-card reveal reveal-delay-1">
+            <div class="venture-status">Live on App Store</div>
+            <div class="venture-name">Daily Fire</div>
+            <div class="venture-desc">
+                iOS motivational app delivering daily messages across Energetic, Calm, and Fierce
+                tones. Home and lock screen widgets with tap-to-rotate. Built with SwiftUI.
+                The first app I ever shipped. Proof the pattern is broken.
+            </div>
+            <div class="venture-tag">iOS &bull; SwiftUI &bull; WidgetKit</div>
+        </div>
+        <div class="venture-card reveal reveal-delay-2">
+            <div class="venture-status">Live on App Store</div>
+            <div class="venture-name">His Word Daily</div>
+            <div class="venture-desc">
+                Bible verse widget app delivering 160 KJV verses across 8 emotional categories.
+                Forked from Daily Fire. Second app shipped within a week of the first.
+                Momentum is a hell of a drug.
+            </div>
+            <div class="venture-tag">iOS &bull; SwiftUI &bull; WidgetKit</div>
+        </div>
+        <div class="venture-card reveal reveal-delay-3">
+            <div class="venture-status">AGMS Solutions LLC</div>
+            <div class="venture-name">The Holding Company</div>
+            <div class="venture-desc">
+                Florida-based umbrella for all ventures. IntelliSquawk is the primary focus,
+                with additional ventures in the queue including FerryMe (GA pilot seat-matching)
+                and Large Language Solutions (AI automation services).
+            </div>
+            <div class="venture-tag">Holding Company &bull; Palm Bay, FL</div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     CONTACT
+     ============================================ -->
+<section id="contact" class="contact section-border-top">
+    <div class="eyebrow reveal">Contact</div>
+    <h2 class="section-heading reveal reveal-delay-1">Let's talk.</h2>
+    <p class="section-body reveal reveal-delay-2">
+        Whether it's aerospace, aviation technology, or building something new,
+        I'm always open to a conversation.
+    </p>
+    <div class="contact-links reveal reveal-delay-3">
+        <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank" class="btn-primary">LinkedIn</a>
+        <a href="/cdn-cgi/l/email-protection#8fe2eefbfbcfeee8e2fcfce0e3fafbe6e0e1fca1ece0e2" class="btn-secondary">Email</a>
+    </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer>
+    <p>&copy; 2026 Matt Smithers. All rights reserved.</p>
+    <p>Melbourne, Florida</p>
+</footer>
+
+<!-- ============================================
+     SCROLL ANIMATION JS
+     ============================================ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Intersection Observer for scroll-triggered animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Observe all animated elements
+    document.querySelectorAll('.reveal, .reveal-fade, .reveal-left').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Header scroll effect
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        const currentScroll = window.pageYOffset;
+        if (currentScroll > 100) {
+            header.style.borderBottomColor = 'rgba(46, 139, 255, 0.1)';
+        } else {
+            header.style.borderBottomColor = 'rgba(255, 255, 255, 0.06)';
+        }
+        lastScroll = currentScroll;
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            i
