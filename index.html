@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matt Smithers | Aerospace Professional & Entrepreneur</title>
-    <meta name="description" content="30 years of aerospace expertise. Navy veteran, flight engineer, program manager. Now building the future of aviation technology.">
+    <title>Matt Smithers | Operational Readiness & Field Execution Leader</title>
+    <meta name="description" content="Operational readiness and field execution leader with 30 years in complex, high-consequence technical environments. Building systems, organizations, and technology that turn advanced hardware into repeatable operations.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta property="og:title" content="Matt Smithers | Aerospace Professional & Entrepreneur">
-    <meta property="og:description" content="30 years of aerospace expertise. Navy veteran, flight engineer, program manager. Now building the future of aviation technology.">
+    <meta property="og:title" content="Matt Smithers | Operational Readiness & Field Execution Leader">
+    <meta property="og:description" content="30 years turning complex hardware, technical teams, and first-asset transitions into repeatable operational capability.">
     <meta property="og:image" content="images/headshot.jpeg">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
@@ -51,49 +51,31 @@
             animation: bodyFadeIn 0.8s ease-out 0.2s forwards;
         }
 
-        @keyframes bodyFadeIn {
-            to { opacity: 1; }
-        }
+        @keyframes bodyFadeIn { to { opacity: 1; } }
 
-        /* ============================================
-           SCROLL ANIMATIONS
-           ============================================ */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
                         transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
         .reveal-delay-4 { transition-delay: 0.4s; }
         .reveal-delay-5 { transition-delay: 0.5s; }
 
-        .reveal-fade {
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
+        .reveal-fade { opacity: 0; transition: opacity 1s ease; }
         .reveal-fade.visible { opacity: 1; }
-
         .reveal-left {
             opacity: 0;
             transform: translateX(-40px);
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
                         transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
+        .reveal-left.visible { opacity: 1; transform: translateX(0); }
 
-        /* ============================================
-           HEADER
-           ============================================ */
         header {
             position: fixed;
             top: 0;
@@ -122,11 +104,7 @@
         }
         .logo span { color: var(--accent); }
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
+        nav { display: flex; align-items: center; gap: 2rem; }
         nav a {
             font-family: var(--font-mono);
             font-size: 0.75rem;
@@ -166,9 +144,6 @@
             transition: all 0.3s ease;
         }
 
-        /* ============================================
-           MOBILE NAV
-           ============================================ */
         .mobile-nav {
             display: none;
             position: fixed;
@@ -194,9 +169,6 @@
         }
         .mobile-nav a:hover { color: var(--accent); }
 
-        /* ============================================
-           HERO
-           ============================================ */
         .hero {
             min-height: 100vh;
             display: grid;
@@ -206,7 +178,6 @@
             position: relative;
             gap: clamp(2rem, 4vw, 4rem);
         }
-
         .hero-text {
             display: flex;
             flex-direction: column;
@@ -214,7 +185,6 @@
             position: relative;
             z-index: 1;
         }
-
         .hero-image {
             position: relative;
             z-index: 1;
@@ -235,7 +205,6 @@
                 0 0 100px rgba(46, 139, 255, 0.12);
         }
 
-        /* Aurora background */
         .aurora {
             position: absolute;
             inset: 0;
@@ -266,23 +235,21 @@
             animation: auroraSweep2 24s linear infinite;
             animation-delay: -10s;
         }
-
         @keyframes auroraSweep1 {
-            0%   { left: -100%; top: -40%; }
-            25%  { top: -30%; }
-            50%  { top: -45%; }
-            75%  { top: -32%; }
+            0% { left: -100%; top: -40%; }
+            25% { top: -30%; }
+            50% { top: -45%; }
+            75% { top: -32%; }
             100% { left: 80%; top: -40%; }
         }
         @keyframes auroraSweep2 {
-            0%   { left: -100%; top: -35%; }
-            25%  { top: -48%; }
-            50%  { top: -30%; }
-            75%  { top: -42%; }
+            0% { left: -100%; top: -35%; }
+            25% { top: -48%; }
+            50% { top: -30%; }
+            75% { top: -42%; }
             100% { left: 80%; top: -35%; }
         }
 
-        /* Hero headshot - top left */
         .hero-headshot {
             width: 200px;
             height: 200px;
@@ -318,7 +285,6 @@
             height: 1px;
             background: var(--accent);
         }
-
         .hero h1 {
             font-family: var(--font-display);
             font-size: clamp(2.8rem, 7vw, 6.5rem);
@@ -330,7 +296,6 @@
             margin-bottom: 2rem;
         }
         .hero h1 .accent { color: var(--accent); }
-
         .hero-sub {
             font-size: clamp(1rem, 1.5vw, 1.25rem);
             color: var(--text-secondary);
@@ -338,7 +303,6 @@
             line-height: 1.7;
             font-weight: 300;
         }
-
         .hero-cta {
             margin-top: 2.5rem;
             display: flex;
@@ -346,7 +310,7 @@
             flex-wrap: wrap;
         }
 
-        .btn-primary {
+        .btn-primary, .btn-secondary {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -355,55 +319,34 @@
             font-weight: 500;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--bg-primary);
-            background: var(--accent);
             padding: 0.9rem 2rem;
-            border: none;
             border-radius: 4px;
             text-decoration: none;
             cursor: pointer;
             transition: all 0.3s ease;
+        }
+        .btn-primary {
+            color: var(--bg-primary);
+            background: var(--accent);
+            border: none;
         }
         .btn-primary:hover {
             background: var(--accent-bright);
             transform: translateY(-2px);
             box-shadow: 0 8px 30px rgba(46, 139, 255, 0.3);
         }
-
         .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
             color: var(--text-primary);
             background: transparent;
-            padding: 0.9rem 2rem;
             border: 1px solid var(--border);
-            border-radius: 4px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
         }
         .btn-secondary:hover {
             border-color: var(--accent);
             color: var(--accent);
         }
 
-        /* ============================================
-           SECTION STYLES
-           ============================================ */
-        section {
-            padding: clamp(4rem, 8vh, 8rem) clamp(1.5rem, 4vw, 3rem);
-        }
-
-        .section-border-top {
-            border-top: 1px solid var(--border);
-        }
-
+        section { padding: clamp(4rem, 8vh, 8rem) clamp(1.5rem, 4vw, 3rem); }
+        .section-border-top { border-top: 1px solid var(--border); }
         .eyebrow {
             font-family: var(--font-mono);
             font-size: 0.75rem;
@@ -413,7 +356,6 @@
             color: var(--accent);
             margin-bottom: 1rem;
         }
-
         .section-heading {
             font-family: var(--font-display);
             font-size: clamp(2rem, 4.5vw, 4rem);
@@ -423,7 +365,6 @@
             line-height: 1.05;
             margin-bottom: 2rem;
         }
-
         .section-body {
             font-size: clamp(1rem, 1.3vw, 1.15rem);
             color: var(--text-secondary);
@@ -432,23 +373,10 @@
             font-weight: 300;
         }
 
-        /* ============================================
-           ABOUT SECTION
-           ============================================ */
-        .about {
-            background: var(--bg-secondary);
-        }
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        .about { background: var(--bg-secondary); }
+        .about-content { max-width: 800px; margin: 0 auto; }
+        .expertise { background: var(--bg-primary); }
 
-        /* ============================================
-           EXPERTISE / CREDENTIALS
-           ============================================ */
-        .expertise {
-            background: var(--bg-primary);
-        }
         .credentials-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -479,9 +407,7 @@
             gap: 1rem;
             transition: background 0.4s ease;
         }
-        .credential-card:hover {
-            background: var(--bg-tertiary);
-        }
+        .credential-card:hover { background: var(--bg-tertiary); }
         .credential-number {
             font-family: var(--font-display);
             font-size: clamp(2.5rem, 5vw, 3.5rem);
@@ -504,12 +430,7 @@
             font-weight: 300;
         }
 
-        /* ============================================
-           WHAT I'M BUILDING
-           ============================================ */
-        .building {
-            background: var(--bg-secondary);
-        }
+        .building { background: var(--bg-secondary); }
         .ventures-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -545,7 +466,6 @@
             transform: translateY(-4px);
         }
         .venture-card:hover::before { opacity: 1; }
-
         .venture-status {
             font-family: var(--font-mono);
             font-size: 0.65rem;
@@ -579,9 +499,6 @@
             margin-top: auto;
         }
 
-        /* ============================================
-           CONTACT
-           ============================================ */
         .contact {
             background: var(--bg-primary);
             text-align: center;
@@ -597,9 +514,6 @@
             flex-wrap: wrap;
         }
 
-        /* ============================================
-           FOOTER
-           ============================================ */
         footer {
             padding: 2rem clamp(1.5rem, 4vw, 3rem);
             border-top: 1px solid var(--border);
@@ -617,19 +531,12 @@
             text-transform: uppercase;
         }
 
-        /* ============================================
-           HORIZONTAL RULE ACCENT
-           ============================================ */
         .accent-line {
             width: 60px;
             height: 2px;
             background: var(--accent);
             margin: 2rem 0;
         }
-
-        /* ============================================
-           BACKGROUND GRID PATTERN
-           ============================================ */
         .grid-bg {
             position: fixed;
             inset: 0;
@@ -641,37 +548,33 @@
                 linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
             background-size: 80px 80px;
         }
-
         section, header, footer { position: relative; z-index: 1; }
 
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
         @media (max-width: 900px) {
             nav { display: none; }
             .hamburger { display: flex; }
             .hero { grid-template-columns: 1fr; }
             .hero-image { padding-top: 0; }
-            .hero-image img { aspect-ratio: auto; object-fit: contain; object-position: center; max-height: none; width: 100%; height: auto; }
+            .hero-image img {
+                aspect-ratio: auto;
+                object-fit: contain;
+                object-position: center;
+                max-height: none;
+                width: 100%;
+                height: auto;
+            }
             .ventures-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 600px) {
+            .positioning-grid { grid-template-columns: 1fr !important; }
             .hero h1 { font-size: 2.4rem; }
-            .hero-headshot {
-                width: 140px;
-                height: 140px;
-            }
+            .hero-headshot { width: 140px; height: 140px; }
             .credentials-grid { grid-template-columns: 1fr; }
             .credentials-grid .credential-card:nth-child(5),
-            .credentials-grid .credential-card:nth-child(6) {
-                grid-column: auto;
-            }
+            .credentials-grid .credential-card:nth-child(6) { grid-column: auto; }
         }
 
-        /* ============================================
-           NOISE TEXTURE OVERLAY
-           ============================================ */
         body::after {
             content: '';
             position: fixed;
@@ -684,65 +587,51 @@
             background-size: 128px 128px;
         }
 
-        /* ============================================
-           SELECTION STYLING
-           ============================================ */
-        ::selection {
-            background: var(--accent);
-            color: var(--bg-primary);
-        }
+        ::selection { background: var(--accent); color: var(--bg-primary); }
     </style>
 </head>
 <body>
 
 <div class="grid-bg"></div>
 
-<!-- ============================================
-     HEADER
-     ============================================ -->
 <header>
     <a href="#" class="logo">MATT<span>.</span>SMITHERS</a>
     <nav>
         <a href="#about">About</a>
-        <a href="#expertise">Expertise</a>
+        <a href="#expertise">Operating Model</a>
         <a href="#building">Building</a>
         <a href="#contact">Contact</a>
     </nav>
     <div class="hamburger" onclick="document.querySelector('.mobile-nav').classList.toggle('open')">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
     </div>
 </header>
 
 <div class="mobile-nav">
     <a href="#about" onclick="document.querySelector('.mobile-nav').classList.remove('open')">About</a>
-    <a href="#expertise" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Expertise</a>
+    <a href="#expertise" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Operating Model</a>
     <a href="#building" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Building</a>
     <a href="#contact" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Contact</a>
 </div>
 
-<!-- ============================================
-     HERO
-     ============================================ -->
 <section class="hero">
     <div class="aurora"></div>
     <div class="hero-text">
         <div class="hero-headshot reveal">
             <img src="images/headshot.jpeg" alt="Matt Smithers">
         </div>
-        <div class="hero-eyebrow reveal reveal-delay-1">Aerospace &bull; Defense &bull; Aviation Technology <span style="display:inline-block; width:32px; height:1px; background:var(--accent); vertical-align:middle; margin-left:0.75rem;"></span></div>
+        <div class="hero-eyebrow reveal reveal-delay-1">Field Operations &bull; Deployment Readiness &bull; Complex Hardware <span style="display:inline-block; width:32px; height:1px; background:var(--accent); vertical-align:middle; margin-left:0.75rem;"></span></div>
         <h1 class="reveal reveal-delay-2">
-            30 Years of Aerospace.<br>
-            <span class="accent">Now Building What's Next.</span>
+            Complex Systems Are Built by Engineering.<br>
+            <span class="accent">Operational Capability Has to Be Built Too.</span>
         </h1>
         <p class="hero-sub reveal reveal-delay-3">
-            Navy combat veteran, flight engineer, and aerospace program manager
-            turning three decades of operational expertise into technology ventures
-            that modernize general aviation.
+            I build the connective tissue between engineering, manufacturing, suppliers,
+            facilities, maintenance, customers, and leadership so advanced hardware can move
+            from development into first-asset execution and repeatable field operations.
         </p>
         <div class="hero-cta reveal reveal-delay-4">
-            <a href="#building" class="btn-primary">What I'm Building &darr;</a>
+            <a href="#about" class="btn-primary">How I Operate &darr;</a>
             <a href="#contact" class="btn-secondary">Get In Touch</a>
         </div>
     </div>
@@ -751,90 +640,74 @@
     </div>
 </section>
 
-<!-- ============================================
-     ABOUT
-     ============================================ -->
+<section class="section-border-top" style="padding-top:2.5rem;padding-bottom:2.5rem;background:var(--bg-primary);">
+    <div class="positioning-grid" style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;">
+        <div style="background:var(--bg-secondary);padding:2rem;"><div class="eyebrow">The Pattern</div><div style="font-size:1.25rem;font-weight:700;">Development to first-asset execution</div></div>
+        <div style="background:var(--bg-secondary);padding:2rem;"><div class="eyebrow">The Problem</div><div style="font-size:1.25rem;font-weight:700;">Functions operating well, but not yet as one system</div></div>
+        <div style="background:var(--bg-secondary);padding:2rem;"><div class="eyebrow">The Work</div><div style="font-size:1.25rem;font-weight:700;">Build the operating model that makes execution repeatable</div></div>
+    </div>
+</section>
+
 <section id="about" class="about section-border-top">
     <div class="about-content">
         <div class="eyebrow reveal">About</div>
-        <h2 class="section-heading reveal reveal-delay-1">The short version.</h2>
+        <h2 class="section-heading reveal reveal-delay-1">I work at the point where the plan meets the real world.</h2>
         <div class="accent-line reveal reveal-delay-2"></div>
         <p class="section-body reveal reveal-delay-2">
-            I spent 22 years as a Navy Flight Engineer &amp; Mechanic on P-3 Orion and C-130 Hercules aircraft,
-            logging over 6,000 combat and operational flight hours. After the Navy, I moved into
-            aerospace program management, supporting some of the most advanced defense platforms
-            in the world at Northrop Grumman.
+            My career began at the wrench-turning and operator level, where consequences were immediate and systems knowledge was earned in the aircraft. I spent 22 years in naval aviation as a mechanic, Flight Engineer, instructor, and operational leader, logging more than 6,000 flight hours on P-3 Orion and C-130 aircraft.
         </p>
         <br>
         <p class="section-body reveal reveal-delay-3">
-            During that time, I've also been a Private Pilot, flying Bellanca Super Vikings, earned a Tailwheel Endorsement in a Vans RV-8 and earned my Airframes &amp; Powerplant certificate in 2020.
+            I later moved into flight test, maintenance leadership, technical data, fleet support, and program
+            readiness on major aerospace programs. The altitude changed, but the operating problem stayed
+            remarkably consistent: <strong style="color: var(--text-primary); font-weight: 700;">capable but siloed functions often execute well individually while the enterprise
+            struggles to integrate them around one executable readiness plan. This is the white space I operate in.</strong>
         </p>
         <br>
         <p class="section-body reveal reveal-delay-4">
-            Now I'm channeling all of that into building technology that brings
-            general aviation into the modern era.
+            That is the work I do now. I expose dependencies early, clarify ownership, create operating models, establish readiness criteria, and build the procedures and feedback loops that make the next deployment more repeatable than the first. I am also applying that same systems mindset to software and product development focused on field operations intelligence.
         </p>
     </div>
 </section>
 
-<!-- ============================================
-     EXPERTISE
-     ============================================ -->
 <section id="expertise" class="expertise section-border-top">
     <div style="max-width: 1300px; margin: 0 auto;">
-        <div class="eyebrow reveal">Expertise</div>
-        <h2 class="section-heading reveal reveal-delay-1">Built on experience.<br>Backed by credentials.</h2>
+        <div class="eyebrow reveal">Operating Model</div>
+        <h2 class="section-heading reveal reveal-delay-1">What I actually bring<br>to the operating environment.</h2>
     </div>
     <div class="credentials-grid">
         <div class="credential-card reveal">
-            <div class="credential-number">30+</div>
-            <div class="credential-label">Years in Aerospace &amp; Defense</div>
-            <div class="credential-detail">
-                From the flight deck to the program office. Navy operations, O-level maintenance, defense acquisition, production and flight test across multiple major weapons systems.
-            </div>
+            <div class="credential-number">01</div>
+            <div class="credential-label">First-Asset Readiness</div>
+            <div class="credential-detail">Build the organization, processes, support infrastructure, and decision structure required before the first aircraft, system, or deployment arrives.</div>
         </div>
         <div class="credential-card reveal reveal-delay-1">
-            <div class="credential-number">6,000+</div>
-            <div class="credential-label">Flight Hours</div>
-            <div class="credential-detail">
-                P-3C Orion and C-130 Hercules. Combat deployments, operational missions,
-                and the kind of systems knowledge you can only get from seat time.
-            </div>
+            <div class="credential-number">02</div>
+            <div class="credential-label">Cross-Functional Integration</div>
+            <div class="credential-detail">Align engineering, suppliers, facilities, maintenance, logistics, customers, and leadership around a single execution model and visible dependencies.</div>
         </div>
         <div class="credential-card reveal reveal-delay-2">
-            <div class="credential-number">22</div>
-            <div class="credential-label">Years U.S. Navy</div>
-            <div class="credential-detail">
-                Flight Engineer. Combat veteran. Deep expertise in multi-engine turboprop
-                aircraft systems, maintenance operations, and crew resource management.
-            </div>
+            <div class="credential-number">03</div>
+            <div class="credential-label">Execution Discipline</div>
+            <div class="credential-detail">Translate technical requirements, contractual obligations, milestones, cost, schedule, and risk into accountable actions and decision points.</div>
         </div>
         <div class="credential-card reveal reveal-delay-3">
-            <div class="credential-number">TS/SAP</div>
-            <div class="credential-label">Active Security Clearance</div>
-            <div class="credential-detail">
-                Top Secret with Special Access Programs. Currently supporting critical
-                defense programs at Northrop Grumman.
-            </div>
+            <div class="credential-number">04</div>
+            <div class="credential-label">Scalable Operating Models</div>
+            <div class="credential-detail">Create governance, procedures, playbooks, lessons-learned systems, and feedback loops so early execution becomes repeatable institutional capability.</div>
         </div>
         <div class="credential-image reveal reveal-delay-4">
             <img src="images/manonstand.jpeg" alt="Matt Smithers on aircraft stand">
         </div>
         <div class="credential-card reveal reveal-delay-4">
-            <div class="credential-number">A&P</div>
-            <div class="credential-label">FAA Certificated Mechanic</div>
-            <div class="credential-detail">
-                Airframe & Powerplant certificate holder. Hands-on knowledge of aircraft
-                maintenance from the wrench-turning level up.
-            </div>
+            <div class="credential-number">A&amp;P</div>
+            <div class="credential-label">Readiness Before First Arrival</div>
+            <div class="credential-detail">Built and led a maintenance support organization that achieved 100% readiness before first aircraft arrival in a high-consequence flight-test environment.</div>
         </div>
         <div class="credential-card reveal reveal-delay-5">
-            <div class="credential-number">BSAS</div>
-            <div class="credential-label">Embry-Riddle Aeronautical University</div>
-            <div class="credential-detail">
-                Bachelor of Science in Aeronautical Science from the world's premier
-                aviation and aerospace university.
-            </div>
+            <div class="credential-number">34</div>
+            <div class="credential-label">Integrated Test Team Planning</div>
+            <div class="credential-detail">Developed staffing and organizational plans for a multi-company Integrated Test Team spanning prime contractors and vendor maintenance organizations.</div>
         </div>
         <div class="credential-image reveal reveal-delay-5">
             <img src="images/qec.jpeg" alt="Quality Engineering Council">
@@ -842,15 +715,14 @@
     </div>
 </section>
 
-<!-- ============================================
-     WHAT I'M BUILDING
-     ============================================ -->
 <section id="building" class="building section-border-top">
     <div style="max-width: 1300px; margin: 0 auto;">
         <div class="eyebrow reveal">What I'm Building</div>
-        <h2 class="section-heading reveal reveal-delay-1">Turning domain expertise<br>into technology.</h2>
+        <h2 class="section-heading reveal reveal-delay-1">Building the next layer<br>of field operations intelligence.</h2>
         <p class="section-body reveal reveal-delay-2" style="margin-bottom: 0;">
-            Combining 30 years of aviation experience and maintenance discipline with emerging technologies to modernize General Aviation and Part 145 Repair and Overhaul facilities.
+            I am applying three decades of operator, maintainer, flight-test, and
+            program leadership experience to a simple problem: how do we capture what field teams know,
+            connect it to what systems are doing, and turn that knowledge into better operational decisions?
         </p>
     </div>
     <div class="ventures-grid">
@@ -858,54 +730,42 @@
             <div class="venture-status">Active Development</div>
             <div class="venture-name">IntelliSquawk</div>
             <div class="venture-desc">
-                Aviation maintenance SaaS targeting Part 145 repair stations and independent
-                A&P mechanics. AI-powered predictive maintenance for the general aviation shops
-                that the big players ignore.
+                An aviation maintenance operations platform designed around real shop-floor workflow. IntelliSquawk structures maintenance history, parts behavior, recurring discrepancies, and frontline knowledge so the operational record becomes more useful with every work order.
             </div>
-            <div class="venture-tag">SaaS &bull; Aviation &bull; AI/ML</div>
+            <div class="venture-tag">Aviation Maintenance &bull; SaaS &bull; Operational Data</div>
         </div>
         <div class="venture-card reveal reveal-delay-1">
-            <div class="venture-status">Live on App Store</div>
-            <div class="venture-name">Daily Fire</div>
+            <div class="venture-status">Operating Thesis</div>
+            <div class="venture-name">Field Operations Intelligence</div>
             <div class="venture-desc">
-                iOS motivational app delivering daily messages across Energetic, Calm, and Fierce
-                tones. Home and lock screen widgets with tap-to-rotate. Built with SwiftUI.
-                The first app I ever shipped.
+                The broader operating thesis behind my work: field teams accumulate critical knowledge that organizations struggle to capture, connect, and reuse. I am interested in the systems, workflows, and feedback loops that turn frontline experience into better readiness, risk visibility, and increasingly repeatable execution.
             </div>
-            <div class="venture-tag">iOS &bull; SwiftUI &bull; WidgetKit</div>
+            <div class="venture-tag">Operational Learning &bull; Readiness &bull; Repeatable Execution</div>
         </div>
         <div class="venture-card reveal reveal-delay-2">
-            <div class="venture-status">Live on App Store</div>
-            <div class="venture-name">His Word Daily</div>
+            <div class="venture-status">Shipped Products</div>
+            <div class="venture-name">AI-Assisted Product Development</div>
             <div class="venture-desc">
-                Bible verse widget app delivering 160 KJV verses across 8 emotional categories.
-                Forked from Daily Fire. Second app shipped within a week of the first.
-                Momentum is a heck of a drug.
+                Two iOS applications shipped using AI-assisted development workflows despite having no traditional software engineering background. The point is not the apps themselves. The point is learning how quickly a domain expert can turn an operational idea into a working product when modern tools remove part of the technical barrier.
             </div>
-            <div class="venture-tag">iOS &bull; SwiftUI &bull; WidgetKit</div>
+            <div class="venture-tag">AI-Assisted Development &bull; SwiftUI &bull; Product Execution</div>
         </div>
         <div class="venture-card reveal reveal-delay-3">
-            <div class="venture-status">AGMS Solutions LLC</div>
-            <div class="venture-name">The Holding Company</div>
+            <div class="venture-status">Current Role</div>
+            <div class="venture-name">Enterprise Readiness Leadership</div>
             <div class="venture-desc">
-                Florida-based umbrella for all ventures. IntelliSquawk is the primary focus,
-                with additional ventures in the queue including FerryMe (GA pilot seat-matching)
-                and Large Language Solutions (AI automation services).
+                Currently leading fleet and field support readiness for a new aircraft program while drawing on prior experience standing up maintenance support before first aircraft arrival, leading technical data organizations, and integrating complex multi-company teams across engineering, operations, facilities, logistics, and sustainment.
             </div>
-            <div class="venture-tag">Holding Company &bull; Palm Bay, FL</div>
+            <div class="venture-tag">Deployment Readiness &bull; Fleet Support &bull; Organizational Integration</div>
         </div>
     </div>
 </section>
 
-<!-- ============================================
-     CONTACT
-     ============================================ -->
 <section id="contact" class="contact section-border-top">
     <div class="eyebrow reveal">Contact</div>
     <h2 class="section-heading reveal reveal-delay-1">Let's talk.</h2>
     <p class="section-body reveal reveal-delay-2">
-        Whether it's aerospace, aviation technology, building something new, or just talking airplanes,
-        I'm always open to a conversation.
+        If you are moving complex hardware from development into field execution, standing up a new operating function, or trying to make cross-functional readiness visible and accountable, that is a conversation I am always interested in having.
     </p>
     <div class="contact-links reveal reveal-delay-3">
         <a href="https://www.linkedin.com/in/matt-smithers-aviation-professional" target="_blank" class="btn-primary">LinkedIn</a>
@@ -913,54 +773,38 @@
     </div>
 </section>
 
-<!-- ============================================
-     FOOTER
-     ============================================ -->
 <footer>
     <p>&copy; 2026 Matt Smithers. All rights reserved.</p>
     <p>Melbourne, Florida</p>
 </footer>
 
-<!-- ============================================
-     SCROLL ANIMATION JS
-     ============================================ -->
 <script>
-    // Intersection Observer for scroll-triggered animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('visible');
         });
     }, {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     });
 
-    // Observe all animated elements
     document.querySelectorAll('.reveal, .reveal-fade, .reveal-left').forEach(el => {
         observer.observe(el);
     });
 
-    // Header scroll effect
-    let lastScroll = 0;
     window.addEventListener('scroll', () => {
         const header = document.querySelector('header');
         const currentScroll = window.pageYOffset;
-        if (currentScroll > 100) {
-            header.style.borderBottomColor = 'rgba(46, 139, 255, 0.1)';
-        } else {
-            header.style.borderBottomColor = 'rgba(255, 255, 255, 0.06)';
-        }
-        lastScroll = currentScroll;
+        header.style.borderBottomColor = currentScroll > 100
+            ? 'rgba(46, 139, 255, 0.1)'
+            : 'rgba(255, 255, 255, 0.06)';
     });
 
-    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
+                e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
